@@ -15,4 +15,15 @@
         <h2>{{ post.title }}</h2>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
+    <hr>
+    {% if comment.post %}
+    <div class="comment">
+        <div class="date">{{ comment.created_date }}</div>
+        <strong>{{ comment.author }}</strong>
+        <p>{{ comment.text|linebreaks }}</p>
+    </div>
+    {% endif %}
+    <div="empty">
+    <p>No comments here yet :(</p>      
+    </div>
 {% endblock %}
