@@ -8,6 +8,7 @@
             </time>
             <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
             <p>{{ post.text|linebreaksbr }}</p>
+            <a class="btn btn-primary"><i class="bi bi-chat-dots-fill"></i> Comments: {{ post.comments.count }}</a>
         </article>
     {% endfor %}
 {% endblock %}

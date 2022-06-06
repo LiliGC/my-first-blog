@@ -16,6 +16,7 @@
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
     <hr>
+    <a href="{% url 'add_comment_to_post' pk=post.pk %}" class="btn btn-primary"><i class="bi bi-chat-dots-fill"></i>  Add comment</a>
     {% if comment.post %}
     <div class="comment">
         <div class="date">{{ comment.created_date }}</div>
