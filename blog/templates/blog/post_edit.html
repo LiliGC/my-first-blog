@@ -3,6 +3,7 @@
 {% block content %}
     <h2>New post</h2>
     <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.media }}
         {{ form.as_p }}
         <button type="submit" class="btn btn-primary">Save  <i class="bi bi-save-fill"></i></button>
     </form>

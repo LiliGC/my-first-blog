@@ -16,9 +16,13 @@
     <body>
         <header class="page-header">
             {% if user.is_authenticated %}
+                <p class="top-menu">Hello {{ user.username }}</p>
+                <a href="{% url 'logout' %}" class="top-menu"><i class="bi bi-door-closed"></i></a>
                 <a href="{% url 'post_new' %}" class="top-menu"><i class="bi bi-journal-plus"></i></a>
                 <a href="{% url 'post_draft_list' %}" class="top-menu"><i class="bi bi-journal-text"></i></a>
                 <button onclick='horafecha()' class="top-menu" style="background-color:transparent" ><i class="bi bi-clock-fill"></i></button>
+            {% else %}
+                <a href="{% url 'login' %}" class="top-menu"><i class="bi bi-door-open"></i></a>
             {% endif %}
             <div class="container">
                 <h1><a href="{% url 'post_list' %}" class="external_link" id="link_to_wiki_page">LiliGC Blog</a></h1>
